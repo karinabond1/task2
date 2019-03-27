@@ -3,6 +3,7 @@ class Calc
 {
 	private $first;
 	private $second;
+	private $mem;
 
 	public function setFirst($first)
 	{
@@ -16,25 +17,43 @@ class Calc
 		return $this->first;
 	}
 
-	public function add($a)
+    public function setSecond($second)
+    {
+        if(is_numeric($second))
+        {
+            $this->second = (int)$second;
+        }
+    }
+    public function getSecond()
+    {
+        return $this->second;
+    }
+
+    public function add($a)
+    {
+        if(is_numeric($a))
+        {
+            $this->mem += (int)$a;
+        }
+    }
+	public function pick($a)
 	{
 		if(is_numeric($a))
 		{
-			$this->first += (int)$a;
+			$this->mem -= (int)$a;
 		}
 	}
-	
-	public function setSecond($second)
-	{
-		if(is_numeric($second))
-		{
-			$this->second = (int)$second;
-		}
-	}
-	public function getSecond()
-	{
-		return $this->second;
-	}
+    public function del()
+    {
+        unset($this->mem);
+    }
+    public function show()
+    {
+        echo $this->mem."<br>";
+    }
+
+
+
 
 	public function plus()
 	{

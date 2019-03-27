@@ -3,19 +3,37 @@ include 'config.php';
 include 'libs/Calc.php';
 
 
-$obg = new Calc();
+$obj = new Calc();
 $first = 9;
 $second = 4;
 
-$obg->setFirst($first);
-$obg->setSecond($second);
-echo 'fist = '.$obg->getFirst().'<br>';
-echo 'second = '.$obg->getSecond().'<br>';
-echo 'Plus = '.$obg->plus().'<br>';
-echo 'Minus = '.$obg->minus().'<br>';
-echo 'Mult = '.$obg->mult().'<br>';
-echo 'Dev = '.$obg->dev().'<br>';
-echo 'Persent = '.$obg->persent().'<br>';
-echo 'Rad = '.$obg->rad().'<br>';
-echo 'One dev = '.$obg->one_dev().'<br>';
+
+$obj->setFirst($first);
+$obj->setSecond($second);
+echo 'fist = ' . $obj->getFirst() . '<br>';
+echo 'second = ' . $obj->getSecond() . '<br>';
+echo 'Plus = ' . $obj->plus() . '<br>';
+echo 'Minus = ' . $obj->minus() . '<br>';
+echo 'Mult = ' . $obj->mult() . '<br>';
+if ($obj->getSecond() == 0) {
+    echo DEV_NULL;
+} else {
+    echo 'Dev = ' . $obj->dev() . '<br>';
+    echo 'One dev = ' . $obj->one_dev() . '<br>';
+    echo 'Persent = ' . $obj->persent() . '<br>';
+}
+
+echo 'Rad = ' . $obj->rad() . '<br>';
+
+
+$obj->add(7);
+$obj->show();//7
+$obj->pick(2);
+$obj->show();//5
+$obj->add(5);
+$obj->show();//10
+$obj->pick(3);
+$obj->show();//7
+$obj->del();
+$obj->show();
 ?>
