@@ -49,7 +49,7 @@ class Calc
     }
     public function show()
     {
-        echo $this->mem."<br>";
+        return $this->mem."<br>";
     }
 
 

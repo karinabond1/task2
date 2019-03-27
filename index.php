@@ -6,34 +6,37 @@ include 'libs/Calc.php';
 $obj = new Calc();
 $first = 9;
 $second = 4;
-
+$dev_null = "";
 
 $obj->setFirst($first);
 $obj->setSecond($second);
-echo 'fist = ' . $obj->getFirst() . '<br>';
-echo 'second = ' . $obj->getSecond() . '<br>';
-echo 'Plus = ' . $obj->plus() . '<br>';
-echo 'Minus = ' . $obj->minus() . '<br>';
-echo 'Mult = ' . $obj->mult() . '<br>';
+$first_get = $obj->getFirst();
+$second_get =  $obj->getSecond();
+$plus = $obj->plus();
+$minus = $obj->minus();
+$mult = $obj->mult();
 if ($obj->getSecond() == 0) {
-    echo DEV_NULL;
+    $dev_null = DEV_NULL;
 } else {
-    echo 'Dev = ' . $obj->dev() . '<br>';
-    echo 'One dev = ' . $obj->one_dev() . '<br>';
-    echo 'Persent = ' . $obj->persent() . '<br>';
+    $dev = $obj->dev();
+    $one_dev = $obj->one_dev();
+    $percent = $obj->persent();
 }
 
-echo 'Rad = ' . $obj->rad() . '<br>';
+$rad = $obj->rad();
 
 
 $obj->add(7);
-$obj->show();//7
+$show1 = $obj->show();//7
 $obj->pick(2);
-$obj->show();//5
+$show2 = $obj->show();//5
 $obj->add(5);
-$obj->show();//10
+$show3 = $obj->show();//10
 $obj->pick(3);
-$obj->show();//7
+$show4 = $obj->show();//7
 $obj->del();
-$obj->show();
+$show5 = $obj->show();
+
+
+include_once 'templates/index.php';
 ?>
